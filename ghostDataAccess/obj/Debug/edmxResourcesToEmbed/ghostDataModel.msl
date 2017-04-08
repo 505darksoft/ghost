@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ghostDBModelStoreContainer" CdmEntityContainer="ghostDBEntities">
+    <EntitySetMapping Name="Albums">
+      <EntityTypeMapping TypeName="ghostDBModel.Album">
+        <MappingFragment StoreEntitySet="Albums">
+          <ScalarProperty Name="idAlbum" ColumnName="idAlbum" />
+          <ScalarProperty Name="idArtist" ColumnName="idArtist" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Tracks" ColumnName="Tracks" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Artists">
+      <EntityTypeMapping TypeName="ghostDBModel.Artist">
+        <MappingFragment StoreEntitySet="Artists">
+          <ScalarProperty Name="idArtist" ColumnName="idArtist" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Formats">
+      <EntityTypeMapping TypeName="ghostDBModel.Format">
+        <MappingFragment StoreEntitySet="Formats">
+          <ScalarProperty Name="idFormat" ColumnName="idFormat" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tracks">
+      <EntityTypeMapping TypeName="ghostDBModel.Track">
+        <MappingFragment StoreEntitySet="Tracks">
+          <ScalarProperty Name="idTrack" ColumnName="idTrack" />
+          <ScalarProperty Name="idAlbum" ColumnName="idAlbum" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="TrackNumber" ColumnName="TrackNumber" />
+          <ScalarProperty Name="FileName" ColumnName="FileName" />
+          <ScalarProperty Name="FileUrlName" ColumnName="FileUrlName" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ghostDBModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextReplaces">
+      <EntityTypeMapping TypeName="ghostDBModel.TextReplace">
+        <MappingFragment StoreEntitySet="TextReplace">
+          <ScalarProperty Name="OldText" ColumnName="OldText" />
+          <ScalarProperty Name="NewText" ColumnName="NewText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextReplaceWebs">
+      <EntityTypeMapping TypeName="ghostDBModel.TextReplaceWeb">
+        <MappingFragment StoreEntitySet="TextReplaceWeb">
+          <ScalarProperty Name="OldText" ColumnName="OldText" />
+          <ScalarProperty Name="NewText" ColumnName="NewText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

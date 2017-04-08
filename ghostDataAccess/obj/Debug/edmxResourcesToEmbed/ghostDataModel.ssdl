@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ghostDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Albums">
+    <Key>
+      <PropertyRef Name="idAlbum" />
+    </Key>
+    <Property Name="idAlbum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idArtist" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Tracks" Type="tinyint" Nullable="false" />
+    <Property Name="Year" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Artists">
+    <Key>
+      <PropertyRef Name="idArtist" />
+    </Key>
+    <Property Name="idArtist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="UrlName" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Formats">
+    <Key>
+      <PropertyRef Name="idFormat" />
+    </Key>
+    <Property Name="idFormat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Text" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ghostDB.dbo.TextReplace' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TextReplace">
+    <Key>
+      <PropertyRef Name="OldText" />
+      <PropertyRef Name="NewText" />
+    </Key>
+    <Property Name="OldText" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NewText" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'ghostDB.dbo.TextReplaceWeb' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="TextReplaceWeb">
+    <Key>
+      <PropertyRef Name="OldText" />
+      <PropertyRef Name="NewText" />
+    </Key>
+    <Property Name="OldText" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="NewText" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tracks">
+    <Key>
+      <PropertyRef Name="idTrack" />
+    </Key>
+    <Property Name="idTrack" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idAlbum" Type="int" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="TrackNumber" Type="tinyint" Nullable="false" />
+    <Property Name="FileName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="FileUrlName" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="Duration" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ghostDBModelStoreContainer">
+    <EntitySet Name="Albums" EntityType="Self.Albums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Artists" EntityType="Self.Artists" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Formats" EntityType="Self.Formats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tracks" EntityType="Self.Tracks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextReplace" EntityType="Self.TextReplace" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TextReplace].[OldText] AS [OldText], 
+    [TextReplace].[NewText] AS [NewText]
+    FROM [dbo].[TextReplace] AS [TextReplace]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TextReplaceWeb" EntityType="Self.TextReplaceWeb" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TextReplaceWeb].[OldText] AS [OldText], 
+    [TextReplaceWeb].[NewText] AS [NewText]
+    FROM [dbo].[TextReplaceWeb] AS [TextReplaceWeb]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,12 @@
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\ghostDataAccess.dll.config
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\ghostDataAccess.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\ghostDataAccess.pdb
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\EntityFramework.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\EntityFramework.xml
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\es\EntityFramework.resources.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\bin\Debug\es\EntityFramework.SqlServer.resources.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\obj\Debug\ghostDataAccess.csprojResolveAssemblyReference.cache
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\obj\Debug\ghostDataAccess.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostDataAccess\obj\Debug\ghostDataAccess.pdb

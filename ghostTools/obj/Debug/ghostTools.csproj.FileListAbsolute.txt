@@ -1,0 +1,11 @@
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\ghostTools.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\ghostTools.pdb
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\ghostDataAccess.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\EntityFramework.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\ghostDataAccess.pdb
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\ghostDataAccess.dll.config
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\EntityFramework.xml
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\bin\Debug\es\EntityFramework.resources.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\obj\Debug\ghostTools.csprojResolveAssemblyReference.cache
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\obj\Debug\ghostTools.dll
+c:\Users\Dark\documents\visual studio 2017\Projects\ghost\ghostTools\obj\Debug\ghostTools.pdb

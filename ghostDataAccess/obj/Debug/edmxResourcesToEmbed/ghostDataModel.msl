@@ -30,6 +30,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TextReplaces">
+      <EntityTypeMapping TypeName="ghostDBModel.TextReplace">
+        <MappingFragment StoreEntitySet="TextReplace">
+          <ScalarProperty Name="idTextReplace" ColumnName="idTextReplace" />
+          <ScalarProperty Name="OldText" ColumnName="OldText" />
+          <ScalarProperty Name="NewText" ColumnName="NewText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TextReplaceWebs">
+      <EntityTypeMapping TypeName="ghostDBModel.TextReplaceWeb">
+        <MappingFragment StoreEntitySet="TextReplaceWeb">
+          <ScalarProperty Name="idTextReplaceWeb" ColumnName="idTextReplaceWeb" />
+          <ScalarProperty Name="OldText" ColumnName="OldText" />
+          <ScalarProperty Name="NewText" ColumnName="NewText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Tracks">
       <EntityTypeMapping TypeName="ghostDBModel.Track">
         <MappingFragment StoreEntitySet="Tracks">
@@ -49,22 +67,6 @@
           <ScalarProperty Name="idUser" ColumnName="idUser" />
           <ScalarProperty Name="username" ColumnName="username" />
           <ScalarProperty Name="password" ColumnName="password" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TextReplaces">
-      <EntityTypeMapping TypeName="ghostDBModel.TextReplace">
-        <MappingFragment StoreEntitySet="TextReplace">
-          <ScalarProperty Name="OldText" ColumnName="OldText" />
-          <ScalarProperty Name="NewText" ColumnName="NewText" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TextReplaceWebs">
-      <EntityTypeMapping TypeName="ghostDBModel.TextReplaceWeb">
-        <MappingFragment StoreEntitySet="TextReplaceWeb">
-          <ScalarProperty Name="OldText" ColumnName="OldText" />
-          <ScalarProperty Name="NewText" ColumnName="NewText" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

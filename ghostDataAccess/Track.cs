@@ -21,5 +21,6 @@ namespace ghostDataAccess
         public string FileName { get; set; }
         public string FileUrlName { get; set; }
         public short Duration { get; set; }
+        public string Url { get; set; }
     }
 }

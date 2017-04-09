@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ghostDataAccess;
+using ghostTools;
 
 namespace ghost.Controllers
 {
@@ -14,7 +15,19 @@ namespace ghost.Controllers
         {
             using (ghostDBEntities entities = new ghostDBEntities())
             {
-                return entities.Tracks.ToList();
+                IEnumerable<TextReplace> textreplace = entities.TextReplaces.ToList();
+                IEnumerable<Track> tracklist = entities.Tracks.ToList();
+                IEnumerable<Album> albumlist = entities.Albums.ToList();
+                IEnumerable<Artist> artistlist = entities.Artists.ToList();
+                IEnumerable<Format> formatlist = entities.Formats.ToList();
+                string f = formatlist.FirstOrDefault(e => e.Name.Equals("GitHubFile")).Text;
+                foreach (Track track in tracklist)
+                {
+                    Album Album = albumlist.FirstOrDefault(e => e.idAlbum.Equals(track.idAlbum));
+                    Artist Artist = artistlist.FirstOrDefault(e => e.idArtist.Equals(Album.idArtist));
+                    track.Url = string.Format(f, Tools.ConvertToGitHubFolder(Artist.Name), Tools.ConvertToGitHubFolder(Album.Title), Tools.ConvertToGitHubFile(track.FileName, textreplace));
+                }
+                return tracklist;
             }
         }
         public HttpResponseMessage Get(int id)
@@ -36,10 +49,23 @@ namespace ghost.Controllers
         {
             using (ghostDBEntities entities = new ghostDBEntities())
             {
-                var entity = entities.Tracks.FirstOrDefault(e => e.Title.ToLower().Contains(title.ToLower()));
-                if (entity != null)
+                IEnumerable<TextReplace> textreplace = entities.TextReplaces.ToList();
+                IEnumerable<Track> tracklist = entities.Tracks.Where(e => e.Title.ToLower().Contains(title.ToLower()));
+                IEnumerable<Album> albumlist = entities.Albums.ToList();
+                IEnumerable<Artist> artistlist = entities.Artists.ToList();
+                IEnumerable<Format> formatlist = entities.Formats.ToList();
+                string f = formatlist.FirstOrDefault(e => e.Name.Equals("GitHubFile")).Text;
+                foreach (Track track in tracklist)
                 {
-                    return Request.CreateResponse(HttpStatusCode.OK, entity);
+                    Album Album = albumlist.FirstOrDefault(e => e.idAlbum.Equals(track.idAlbum));
+                    Artist Artist = artistlist.FirstOrDefault(e => e.idArtist.Equals(Album.idArtist));
+                    track.Url = string.Format(f, Tools.ConvertToGitHubFolder(Artist.Name), Tools.ConvertToGitHubFolder(Album.Title), Tools.ConvertToGitHubFile(track.FileName, textreplace));
+                }
+                List<Track> l = tracklist.ToList<Track>();
+                //var entity = entities.Tracks.Where(e => e.Title.ToLower().Contains(title.ToLower()));
+                if (tracklist != null || tracklist.Count() == 0)
+                {
+                    return Request.CreateResponse<List<Track>>(HttpStatusCode.OK, l);
                 }
                 else
                 {

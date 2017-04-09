@@ -26,23 +26,19 @@
     <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Text" Type="varchar" MaxLength="250" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ghostDB.dbo.TextReplace' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="TextReplace">
     <Key>
-      <PropertyRef Name="OldText" />
-      <PropertyRef Name="NewText" />
+      <PropertyRef Name="idTextReplace" />
     </Key>
+    <Property Name="idTextReplace" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OldText" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NewText" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
-  <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'ghostDB.dbo.TextReplaceWeb' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="TextReplaceWeb">
     <Key>
-      <PropertyRef Name="OldText" />
-      <PropertyRef Name="NewText" />
+      <PropertyRef Name="idTextReplaceWeb" />
     </Key>
+    <Property Name="idTextReplaceWeb" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="OldText" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NewText" Type="varchar" MaxLength="10" Nullable="false" />
   </EntityType>
@@ -70,19 +66,9 @@ advertencia 6002: La tabla o vista 'ghostDB.dbo.TextReplaceWeb' no tiene definid
     <EntitySet Name="Albums" EntityType="Self.Albums" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Artists" EntityType="Self.Artists" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Formats" EntityType="Self.Formats" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextReplace" EntityType="Self.TextReplace" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TextReplaceWeb" EntityType="Self.TextReplaceWeb" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tracks" EntityType="Self.Tracks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="TextReplace" EntityType="Self.TextReplace" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TextReplace].[OldText] AS [OldText], 
-    [TextReplace].[NewText] AS [NewText]
-    FROM [dbo].[TextReplace] AS [TextReplace]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="TextReplaceWeb" EntityType="Self.TextReplaceWeb" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [TextReplaceWeb].[OldText] AS [OldText], 
-    [TextReplaceWeb].[NewText] AS [NewText]
-    FROM [dbo].[TextReplaceWeb] AS [TextReplaceWeb]</DefiningQuery>
-    </EntitySet>
   </EntityContainer>
 </Schema>

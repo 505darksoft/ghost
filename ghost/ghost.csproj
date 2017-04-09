@@ -370,6 +370,10 @@
       <Project>{be2dc20e-54d0-468d-a85f-6daa7b8e6371}</Project>
       <Name>ghostDataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ghostTools\ghostTools.csproj">
+      <Project>{5606eace-0718-483d-bf8e-43f42e29a64f}</Project>
+      <Name>ghostTools</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

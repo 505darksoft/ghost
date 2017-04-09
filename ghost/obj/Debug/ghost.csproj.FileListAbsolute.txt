@@ -127,3 +127,5 @@ c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\bin\es\System.We
 c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\bin\es\System.Web.WebPages.Razor.resources.dll
 c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\obj\Debug\ghost.dll
 c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\obj\Debug\ghost.pdb
+c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\bin\ghostTools.dll
+c:\users\dark\documents\visual studio 2017\Projects\ghost\ghost\bin\ghostTools.pdb

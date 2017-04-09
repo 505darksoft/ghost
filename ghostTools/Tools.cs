@@ -18,38 +18,14 @@ namespace ghostTools
         #region Convert to GitHub folder
         public static string ConvertToGitHubFolder(string str)
         {
-            //if (s != null)
-            //{
-            //    foreach (char c in s.ToCharArray())
-            //    {
-            //        if (!(c >= 65 && c <= 90) && !(c >= 97 && c <= 122))
-            //        {
-            //            s = s.Replace(c, '-');
-            //        }
-            //    }
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        s = s.Replace("--", "-");
-            //    }
-            //    for (int i = 0; i < 5; i++)
-            //    {
-            //        s = s.TrimEnd('-');
-            //    }
-            //}
-            string bs = " ";
-            for (int i = 0; i < 5; i++)
-            {
-                bs += " ";
-                str = str.Replace(bs, " ");
-            }
-            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-            str = rgx.Replace(str, "");
+            str = Regex.Replace(str, @"[^A-Za-z0-9+÷]+", "-");
+            str = str.Trim('-');
             return str;
         }
         #endregion
 
         #region Convert to GitHub file
-        public static string ConvertToGitHubFile(string s, List<TextReplace> TextReplaceList)
+        public static string ConvertToGitHubFile(string s, IEnumerable<TextReplace> TextReplaceList)
         {
             if (s != null)
             {
